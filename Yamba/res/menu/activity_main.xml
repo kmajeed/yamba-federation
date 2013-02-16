@@ -1,0 +1,25 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/item_status"
+        android:icon="@android:drawable/ic_menu_add"
+        android:showAsAction="always|withText"
+        android:title="@string/update">
+    </item>
+    <item
+        android:id="@+id/item_refresh"
+        android:icon="@android:drawable/ic_menu_rotate"
+        android:showAsAction="always|withText"
+        android:title="@string/refresh">
+    </item>
+    <item
+        android:id="@+id/item_purge"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="@string/purge">
+    </item>
+    <item
+        android:id="@+id/item_theme"
+        android:title="@string/toggle_theme">
+    </item>
+
+</menu>

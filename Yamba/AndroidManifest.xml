@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.marakana.android.yamba"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="16" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="com.marakana.android.yamba.permission.YAMBA_SERVICE" />
+    <uses-permission android:name="com.marakana.android.yamba.permission.YAMBA_SERVICE_UPDATE" />
+    <uses-permission android:name="com.marakana.android.yambadata.READ_STATUS" />
+    <uses-permission android:name="com.marakana.android.yambadata.WRITE_STATUS" />
+    <uses-permission android:name="com.marakana.android.yamba.permission.REFRESH" />
+
+    <permission
+        android:name="com.marakana.android.yamba.permission.REFRESH"
+        android:protectionLevel="signature" />
+
+    <application
+        android:name=".YambaApp"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.marakana.android.yamba.StatusActivity"
+            android:label="@string/title_activity_status" >
+        </activity>
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".BootReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".NotificationReceiver"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="com.marakana.android.yamba.action.NEW_STATUS" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".RefreshService"
+            android:permission="com.marakana.android.yamba.permission.REFRESH" >
+            <intent-filter>
+                <action android:name="com.marakana.android.yamba.action.REFRESH" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

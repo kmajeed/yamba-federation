@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.marakana.android.yambadata"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="16" />
+
+    <permission
+        android:name="com.marakana.android.yambadata.READ_STATUS"
+        android:protectionLevel="signature" />
+    <permission
+        android:name="com.marakana.android.yambadata.WRITE_STATUS"
+        android:protectionLevel="signature" />
+
+    <application android:allowBackup="true" >
+        <provider
+            android:name="com.marakana.android.yambadata.StatusProvider"
+            android:authorities="com.marakana.android.android.yamba.provider.timeline"
+            android:exported="true"
+            android:readPermission="com.marakana.android.yambadata.READ_STATUS"
+            android:writePermission="com.marakana.android.yambadata.WRITE_STATUS" >
+        </provider>
+    </application>
+
+</manifest>

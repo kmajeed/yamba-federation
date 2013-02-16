@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".StatusActivity" >
+
+    <com.marakana.android.yamba.yambauilib.CoolButton
+        android:id="@+id/button_update"
+        style="@style/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/update" />
+
+    <EditText
+        android:id="@+id/edit_status"
+        style="@style/edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/button_update"
+        android:hint="@string/hint_status"
+        android:inputType="textAutoCorrect|textMultiLine" >
+
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/text_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/button_update"
+        android:layout_alignBottom="@+id/button_update"
+        android:layout_alignParentLeft="true"
+        android:text="140"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>
